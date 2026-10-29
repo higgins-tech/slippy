@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SLIPPY — twelve slippys. one snake. zero arms.</title>
+  <meta name="description"
+    content="The internet's most divided snake. Twelve personalities share one body — none of them knows. Wake today's Slippy.">
+  <meta name="theme-color" content="#0f1626">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="SLIPPY">
+  <meta property="og:title" content="SLIPPY — twelve slippys. one snake. zero arms.">
+  <meta property="og:description"
+    content="The internet's most divided snake. Twelve personalities share one body — none of them knows. Wake today's Slippy.">
+  <meta property="og:image" content="og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <script src="assets/sources.js"></script>
+  <script src="assets/app-bundle_mv6x7hf6.js"></script>
+  <script src="assets/qr-code-styling.js"></script>
+  <link rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%90%8D%3C/text%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Caveat:wght@500;700&family=JetBrains+Mono:wght@500;700&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400;1,600;1,700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- ============================ NAV ============================ -->
+  <header class="nav" id="top">
+    <a class="logo connect-button" href="#top"
+      aria-label="Slippy — back to top"><span>S</span><span>L</span><span>I</span><span>P</span><span>P</span><span>Y</span></a>
+
+    <div class="nav-right">
+      <time class="nav-date" id="navDate"></time>
+      <ul class="nav-social" aria-label="Social links">
+        <li><a class="connect-button" href="#" aria-label="Instagram"><i class="ri-instagram-line"></i></a></li>
+        <li><a class="connect-button" href="#" aria-label="TikTok"><i class="ri-tiktok-line"></i></a></li>
+        <li><a class="connect-button" href="#" aria-label="YouTube"><i class="ri-youtube-line"></i></a></li>
+        <li><a class="connect-button" href="" aria-label="Telegram"><i class="ri-telegram-2-line"></i></a></li>
+        <li><a class="connect-button" href="" aria-label="X"><i class="ri-twitter-x-line"></i></a></li>
+      </ul>
+      <nav class="nav-links" aria-label="Primary">
+        <a class="pill pill--dark connect-button" href=""><span aria-hidden="true">🎟️</span>presale</a>
+        <a class="pill pill--dark connect-button" href=""><span aria-hidden="true">🥚</span>NFT
+          whitelist</a>
+        <a class="pill pill--sun connect-button" href=""><span aria-hidden="true">🎮</span>play
+          siege</a>
+        <a class="pill pill--pfp connect-button" href="" data-tab-link="pfp"><span aria-hidden="true">🐍</span>slippy
+          PFP</a>
+        <a class="pill pill--stripe connect-button" href="">buy
+          $SLIPPY</a>
+      </nav>
+      <button class="sound connect-button" id="soundToggle" type="button" aria-pressed="false">SOUND: OFF</button>
+    </div>
+
+    <button class="burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false"
+      aria-controls="drawer"><span></span><span></span><span></span></button>
+  </header>
+
+  <!-- mobile nav: slides in from the right -->
+  <aside class="drawer" id="drawer" aria-hidden="true" aria-label="Menu">
+    <button class="drawer-close connect-button" id="drawerClose" type="button" aria-label="Close menu"><i
+        class="ri-close-line"></i></button>
+    <nav class="drawer-links" aria-label="Mobile">
+      <a class="pill pill--dark connect-button" href=""><span aria-hidden="true">🎟️</span>presale</a>
+      <a class="pill pill--dark connect-button" href=""><span aria-hidden="true">🥚</span>NFT
+        whitelist</a>
+      <a class="pill pill--sun connect-button" href=""><span aria-hidden="true">🎮</span>play
+        siege</a>
+      <a class="pill pill--cream connect-button" href="" data-tab-link="pfp"><span aria-hidden="true">🐍</span>slippy
+        PFP</a>
+      <a class="pill pill--cream connect-button" href="" data-tab-link="meme"><span aria-hidden="true">😂</span>meme
+        studio</a>
+      <a class="pill pill--cream connect-button" href=""><span aria-hidden="true">💰</span>buy $SLIPPY</a>
+    </nav>
+    <div class="drawer-social">
+      <a class="connect-button" href="" aria-label="Telegram"><i class="ri-telegram-2-line"></i></a>
+      <a class="connect-button" href="" aria-label="X"><i class="ri-twitter-x-line"></i></a>
+    </div>
+  </aside>
+
+  <main>
+    <!-- ============================ HERO ============================ -->
+    <section class="hero" id="hero" aria-label="Today's Slippy">
+      <h1 class="sr-only">SLIPPY — twelve slippys. one snake. zero arms.</h1>
+
+      <div class="hero-stage">
+        <div class="beam" aria-hidden="true"></div>
+        <div class="lamp" aria-hidden="true"><i></i></div>
+
+        <div class="tank" id="tank">
+          <div class="tank-lid" aria-hidden="true"></div>
+          <div class="tank-glass">
+            <span class="tank-glare" aria-hidden="true"></span>
+            <p class="tank-day" id="tankDay" hidden></p>
+            <img class="tank-sleeper" src="img/robinhoodsnake.png" alt="silhouette, never photographed">
+            <span class="zzz" aria-hidden="true">z z z</span>
+            <div class="tank-pet" id="tankPet"><img id="tankPetImg" src="img/robinhoodsnake.png" alt="Today's Slippy">
+            </div>
+            <div class="tank-sign" aria-hidden="true"><b>please do not tap the glass</b><small>management</small></div>
+            <div class="tank-cta">
+              <span class="tri" aria-hidden="true"></span>
+              <button class="open-btn connect-button" id="openBtn" type="button"><span>open the tank</span></button>
+              <p class="tank-hint" id="tankHint">something is asleep in there.</p>
+            </div>
+            <span class="tank-plate" aria-hidden="true">SLIPPY</span>
+          </div>
+          <div class="tank-rim" aria-hidden="true"></div>
+        </div>
+      </div>
+
+      <div class="hero-desk">
+        <img class="prop prop-paper" src="placeholder.svg" data-src="assets/props/papers.webp" alt="">
+        <img class="prop prop-pizza" src="placeholder.svg" data-src="assets/props/pizza.webp" alt="">
+        <img class="prop prop-mug" src="placeholder.svg" data-src="assets/props/mug.webp" alt="">
+        <img class="prop prop-keyboard" src="placeholder.svg" data-src="assets/props/keyboard.webp" alt="">
+        <img class="prop prop-crt" src="placeholder.svg" data-src="assets/props/crt.webp" alt="">
+        <img class="prop prop-can" src="placeholder.svg" data-src="assets/props/can.webp" alt="">
+        <img class="prop prop-noodles" src="placeholder.svg" data-src="assets/props/noodles.webp" alt="">
+        <img class="prop prop-mouse" src="placeholder.svg" data-src="assets/props/mouse.webp" alt="">
+
+        <div class="console">
+          <div class="today">
+            <p class="eyebrow">today's slippy</p>
+            <p class="today-name" id="todayName">???</p>
+            <p class="today-line" id="todayLine">lift the lid to find out.</p>
+          </div>
+          <div class="send">
+            <button class="send-btn connect-button" id="sendBtn" type="button" disabled>claim today's slippy</button>
+            <p class="yesterday">yesterday was: <span id="yesterdayName">copium</span></p>
+            <p class="day-count">day <span class="dayN">301</span>. still no arms.</p>
+          </div>
+        </div>
+
+        <div class="agenda">
+          <p class="agenda-title">the agenda: pick a day, wake a slippy</p>
+          <div class="agenda-scroll" id="agenda"></div>
+        </div>
+
+        <a class="story-cue connect-button" href=""><span>the story is below</span><i class="chev"
+            aria-hidden="true"></i></a>
+      </div>
+    </section>
+
+    <!-- ============================ CHAPTER ONE ============================ -->
+    <section class="ch ch1" id="chapter-1">
+      <p class="eyebrow">chapter one</p>
+      <h2 class="t">There was a snake.</h2>
+      <div class="diorama" role="img"
+        aria-label="A hatchling Slippy in a plastic terrarium on a shelf, next to a mining rig and a monitor showing a chart">
+        <i class="d-cord"></i><i class="d-dome"></i>
+        <div class="d-monitor">
+          <div class="d-bars"><b></b><b></b><b></b><b></b><b></b></div>
+        </div>
+        <div class="d-rig"><b></b><b></b></div>
+        <div class="d-tank"><img src="img/copiumsnake.png" alt=""></div>
+        <div class="d-shelf"></div>
+      </div>
+      <p class="lede">It hatched in a plastic terrarium on the desk of some guy who never logged off. The heat lamp was
+        broken, so it warmed itself on the back of a mining rig.</p>
+    </section>
+
+    <!-- ============================ CHAPTER TWO ============================ -->
+    <section class="ch ch2" id="chapter-2">
+      <p class="eyebrow">chapter two</p>
+      <h2 class="t">The internet got in.</h2>
+      <div class="swarm" id="swarm">
+        <img class="swarm-snake" src="img/copiumsnake.png" alt="Little Slippy in the swarm">
+      </div>
+      <p class="lede">A snake's brain is small. The internet is not. Something had to give.</p>
+    </section>
+
+    <!-- ============================ CHAPTER THREE ============================ -->
+    <section class="ch ch3" id="chapter-3">
+      <p class="eyebrow">chapter three</p>
+      <video class="cowboy" src="img/videosnake-3.webm" alt="Cowboy Slippy" autoplay loop muted></video>
+      <h2 class="t">Snakes shed skin.<br>Slippy sheds selves.</h2>
+      <div class="counter" aria-hidden="true">
+        <div class="counter-top"></div>
+        <div class="counter-front"><i></i><i></i></div>
+        <i class="c-item c-disp"></i><i class="c-item c-paper"></i><i class="c-item c-mug"></i>
+        <span class="c-take">take a number</span>
+      </div>
+    </section>
+
+    <!-- ============================ THE SESSION ============================ -->
+    <section class="session" id="session" aria-labelledby="sessionTitle">
+      <div class="session-stick">
+        <div class="floor-lamp" aria-hidden="true"></div>
+        <div class="session-head">
+          <p class="eyebrow">the session</p>
+          <h2 id="sessionTitle"><span class="sl sl1">They share one body.</span><span class="sl sl2">None of them
+              knows.</span><span class="sl sl3">Every morning, one of them wakes up first.</span></h2>
+        </div>
+        <div class="couch" aria-hidden="true">
+          <img class="chair-snake" src="img/professorsnake.png" alt="">
+          <i class="c-arm"></i><i class="c-pillow"></i><i class="c-seat"></i><i class="c-pad"></i><i
+            class="c-leg"></i><i class="c-leg r"></i>
+        </div>
+        <article class="clip">
+          <header class="clip-head"><b>Patient: Slippy</b><span>N° of patients: 12</span></header>
+          <p class="clip-note" id="clipNote" aria-live="polite"></p>
+          <div class="clip-nav">
+            <button class="s-btn connect-button" id="sPrev" type="button">← previous</button>
+            <span class="clip-count" id="clipCount">session 1 / 12</span>
+            <button class="s-btn s-btn--next connect-button" id="sNext" type="button">next →</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <div class="tape-x" aria-hidden="true">
+      <div class="tape tape--a">
+        <div class="tape-track" data-text="EVIDENCE. DO NOT CROSS"></div>
+      </div>
+      <div class="tape tape--b">
+        <div class="tape-track" data-text="EVIDENCE. DO NOT CROSS"></div>
+      </div>
+    </div>
+
+    <section class="tapes" id="tapes">
+      <p class="eyebrow">the session: evidence</p>
+      <h2 class="t">The tapes.</h2>
+      <div class="phones">
+        <figure class="exhibit">
+          <div class="tag"><b>Exhibit A</b>
+            <p>“the incident.” Tuesday. 100x.</p>
+          </div>
+          <div class="phone">
+            <div class="screen">
+              <video muted loop playsinline autoplay src="img/phone1.mp4"></video>
+            </div>
+            <button class="phone-sound connect-button" type="button">SOUND: OFF</button>
+          </div>
+        </figure>
+        <figure class="exhibit">
+          <div class="tag"><b>Exhibit B</b>
+            <p>“the yacht.” Nobody knows whose day this was.</p>
+          </div>
+          <div class="phone">
+            <div class="screen">
+              <video muted loop playsinline autoplay src="img/phone2.mp4"></video>
+            </div>
+            <button class="phone-sound connect-button" type="button">SOUND: OFF</button>
+          </div>
+        </figure>
+      </div>
+      <p class="tapes-foot">Footage recovered from the terrarium. The others deny everything.</p>
+    </section>
+
+    <!-- ============================ CHAPTER FOUR ============================ -->
+    <section class="ch ch4" id="chapter-4">
+      <div class="casefile"><span>case file N° <span class="dayN">301</span>. subject: slippy</span><b
+          class="open-stamp">open</b></div>
+      <div class="ch4-head">
+        <p class="eyebrow">chapter four</p>
+        <h2 class="t">Eleven of him.</h2>
+        <p class="sub">they never appear together. canon.</p>
+      </div>
+      <div class="files" id="files" aria-label="Personality files"></div>
+    </section>
+
+    <!-- ============================ THE HATCHERY ============================ -->
+    <section class="ch hatch" id="hatchery">
+      <p class="eyebrow">the hatchery</p>
+      <h2 class="hatch-title">Make your own Slippy</h2>
+      <p class="hatch-sub">whoever you build is whoever woke up. no arms included.</p>
+
+      <div class="tabs" role="tablist" aria-label="Hatchery tools">
+        <button class="tab connect-button" type="button" role="tab" data-tab="pfp" aria-selected="true"><span
+            aria-hidden="true">🐍</span>PFP creator</button>
+        <button class="tab connect-button" type="button" role="tab" data-tab="meme" aria-selected="false"><span
+            aria-hidden="true">😂</span>Meme studio</button>
+      </div>
+
+      <div class="studio" id="panel-pfp" role="tabpanel">
+        <div class="opts" id="pfpOptions"></div>
+        <div class="preview">
+          <div class="frame">
+            <div class="pfp-stage" id="pfpStage" data-bg="chart-up">
+              <div class="pfp-body"></div>
+            </div>
+          </div>
+          <div class="caption"><b id="pfpTitle">Gaming Degen</b><span>gsss.</span></div>
+          <div class="actions">
+            <button class="btn-act btn-act--sun connect-button" id="pfpWake" type="button"><span
+                aria-hidden="true">🎲</span>wake one up</button>
+            <button class="btn-act connect-button" id="pfpDownload" type="button">↓ download</button>
+            <button class="btn-act connect-button" id="pfpShare" type="button"><i class="ri-twitter-x-line"
+                aria-hidden="true"></i>share</button>
+          </div>
+          <label class="wm"><input type="checkbox" id="pfpWm" checked>slippy.club watermark on export</label>
+        </div>
+      </div>
+
+      <div class="studio" id="panel-meme" role="tabpanel" hidden>
+        <div class="opts" id="memeOptions"></div>
+        <div class="preview">
+          <div class="frame">
+            <div class="meme-stage" id="memeStage" data-bg="navy"><img class="meme-snake char" alt="">
+              <p class="meme-text top"></p>
+              <p class="meme-text bottom"></p>
+            </div>
+          </div>
+          <div class="actions">
+            <button class="btn-act btn-act--sun connect-button" id="memeWake" type="button"><span
+                aria-hidden="true">🎲</span>wake one up</button>
+            <button class="btn-act connect-button" id="memeDownload" type="button">↓ download</button>
+            <button class="btn-act connect-button" id="memeShare" type="button"><i class="ri-twitter-x-line"
+                aria-hidden="true"></i>share</button>
+          </div>
+          <label class="wm"><input type="checkbox" id="memeWm" checked>slippy.club watermark on export</label>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ CHAPTER FIVE ============================ -->
+    <div class="ticker" aria-hidden="true">
+      <div class="tape-track" data-text="WANTED: THE ONE NOBODY HAS SEEN. reward: coins."></div>
+    </div>
+    <section class="ch ch5" id="chapter-5">
+      <p class="eyebrow">chapter five</p>
+      <h2 class="t">The one nobody has seen.</h2>
+      <div class="archer">
+        <video class="char" autoplay loop muted src="img/videosnake-2.webm" alt="Silhouette of the one nobody has seen">
+          <span class="arrow" aria-hidden="true"><i></i></span>
+      </div>
+      <article class="note">
+        <p class="note-quote">"The 11th shed happened somewhere new. A chain built by the people who named their app
+          after his hero. He read the docs / nobody reads the docs. He said: <strong>this is where I rob the
+            whales.</strong>"</p>
+        <div class="note-grid">
+          <div class="box box--green">
+            <h3>Robinhood chain</h3>
+            <p>the retail chain. he picked it himself.</p>
+          </div>
+          <div class="box">
+            <h3>$SLIPPY</h3><code>0xf0568863195770965a6d8abb0aa87f4314b80320</code><button class="copy connect-button"
+              type="button" data-copy="0xf0568863195770965a6d8abb0aa87f4314b80320">copy it</button>
+          </div>
+          <div class="box box--wide">
+            <h3>The fine print</h3>
+            <p>1B supply. liquidity locked forever. no roadmap. no utility.</p><small>signed, #11</small>
+          </div>
+        </div>
+      </article>
+      <p class="stamp-line">ROB THE WHALES. FEED THE DEGENS. <em>#11, probably</em></p>
+    </section>
+
+    <!-- ============================ CHAPTER SIX ============================ -->
+    <section class="ch ch6" id="chapter-6">
+      <div class="blob" aria-hidden="true"></div>
+      <p class="eyebrow">chapter six</p>
+      <video class="twin" src="img/videosnake-1.webm" alt="Two-headed rainbow Slippy" autoplay loop muted></video>
+      <h2 class="t">All your moods are still you.</h2>
+      <p class="eyebrow small">balance after chaos</p>
+    </section>
+
+    <!-- ============================ THE COIN ============================ -->
+    <section class="ch coin" id="coin">
+      <p class="eyebrow">the token</p>
+      <h2 class="t">The Coin.</h2>
+      <p class="sub">one coin. twelve opinions about what to do with it.</p>
+      <div class="coin-img"><img src="img/coinsnake.png" alt="$SLIPPY coin"></div>
+
+      <div class="ca">
+        <span class="ca-label">CA</span>
+        <code>0xf0568863195770965a6d8abb0aa87f4314b80320</code>
+        <button class="copy connect-button" type="button" data-copy="0xf0568863195770965a6d8abb0aa87f4314b80320">copy
+          it</button>
+      </div>
+
+      <ol class="steps">
+        <li class="step"><span class="num">1.</span>
+          <h3>get a wallet</h3>
+          <p>any wallet. slippy doesn't have hands, so you'll be holding for both of you.</p>
+        </li>
+        <li class="step"><span class="num">2.</span>
+          <h3>fund it</h3>
+          <p>only what you can afford to explain to your auntie. if needed, bridge on littlejohn.</p>
+          <div class="btn-row"><a class="mini mini--dark connect-button">🐍 bridge on
+              littlejohn</a></div>
+        </li>
+        <li class="step"><span class="num">3.</span>
+          <h3>buy $SLIPPY</h3>
+          <p>on uniswap. one swap. welcome to the terrarium.</p>
+          <div class="btn-row"><a class="mini mini--sun connect-button"><span aria-hidden="true">🦄</span>buy on
+              uniswap</a></div>
+        </li>
+        <li class="step step--or"><span class="num">or.</span>
+          <h3>buy with a telegram bot</h3>
+          <p>for the ones who never leave telegram.</p>
+          <div class="btn-row">
+            <a class="mini mini--dark connect-button" href="">maestro</a>
+            <a class="mini mini--dark connect-button" href="">sigma</a>
+            <a class="mini mini--dark connect-button" href="">based</a>
+          </div>
+        </li>
+      </ol>
+
+      <aside class="ledger">
+        <header>
+          <h3>Vault ledger</h3><span>audited by nobody</span>
+        </header>
+        <dl>
+          <div>
+            <dt>total supply</dt>
+            <dd class="big">1,000,000,000 $SLIPPY</dd>
+          </div>
+          <div>
+            <dt>liquidity</dt>
+            <dd>locked forever. the key is in the tank.</dd>
+          </div>
+          <div>
+            <dt>team allocation</dt>
+            <dd>zero. no arms to hold it.</dd>
+          </div>
+          <div>
+            <dt>taxes</dt>
+            <dd>0% in. 0% out. he doesn't do paperwork.</dd>
+          </div>
+        </dl>
+        <p class="ledger-sign">signed, #6. from the good chair.</p>
+      </aside>
+      <p class="fine">no roadmap. no utility. signed, #11</p>
+    </section>
+
+    <!-- ============================ THE PIT ============================ -->
+    <section class="pit" id="pit">
+      <div class="hazard" aria-hidden="true"></div>
+      <div class="danger-sign" aria-hidden="true"><b>Danger</b><span>open pit. obviously.</span></div>
+      <div class="pit-inner">
+        <p class="eyebrow">the community</p>
+        <h2 class="t">The Pit.</h2>
+        <p class="sub">everyone is in it together. mostly down.</p>
+        <ul class="tags">
+          <li style="--c:#3b82f6">probably nothing</li>
+          <li style="--c:#7ed957">gm</li>
+          <li style="--c:#e0357f">LFG</li>
+          <li style="--c:#f5a300">wen</li>
+          <li style="--c:#19c3b3">we do not check prices</li>
+          <li style="--c:#f2542d">yeehaw</li>
+          <li style="--c:#8a5cf0">we go again tomorrow</li>
+        </ul>
+        <div class="pit-cta">
+          <a class="btn btn--cream connect-button">enter the pit → telegram</a>
+          <a class="btn btn--ghost connect-button">watch the fall → X</a>
+        </div>
+        <div class="pit-edge">
+          <div class="hole" aria-hidden="true"></div>
+          <img class="char" src="img/snake-1.png" alt="Degen Slippy at the edge of the pit">
+        </div>
+        <p class="pit-note">no floor. no financial advice. no arms.</p>
+      </div>
+      <div class="barrier" aria-hidden="true">
+        <div class="bar"></div>
+        <b class="post"></b><b class="post"></b><b class="post"></b><b class="post"></b>
+        <i class="glow"></i>
+        <p class="made-it">you made it.</p>
+      </div>
+    </section>
+
+    <!-- ============================ FOOTER ============================ -->
+    <footer class="footer">
+      <p class="day-line">day <span class="dayN">301</span>. still no arms.</p>
+      <div class="credit">
+        <small>In exclusive collaboration with</small>
+        <b>Antoine Mingo</b>
+        <em>Art &amp; Design by Antoine</em>
+        <div class="credit-links">
+          <a class="connect-button" href="https://x.com/LiViXi3"><i class="ri-twitter-x-line"
+              aria-hidden="true"></i>@LiViXi3</a>
+          <a class="connect-button" href="https://www.linkedin.com/in/antoine-mingo/"><i class="ri-linkedin-fill"
+              aria-hidden="true"></i>antoine-mingo</a>
+        </div>
+      </div>
+      <button class="egg connect-button" id="eggBtn" type="button" aria-haspopup="dialog" aria-label="Open the egg">
+        <img class="egg-closed" src="img/egg-open.png" alt="">
+        <img class="egg-open" src="img/egg-open.png" alt="">
+      </button>
+      <p class="egg-hint">psst. the egg knows something.</p>
+    </footer>
+  </main>
+
+  <!-- egg modal -->
+  <div class="modal" id="eggModal" role="dialog" aria-modal="true" aria-labelledby="eggTitle" hidden>
+    <div class="modal-card">
+      <button class="modal-close connect-button" type="button" aria-label="Close">✕</button>
+      <p class="eyebrow">from inside the egg</p>
+      <h2 id="eggTitle">THE ORIGIN</h2>
+      <div class="origin">
+        <img src="placeholder.svg" alt="Antoine drawing Slippy">
+        <video id="originVideo" playsinline preload="metadata" data-src="assets/video/origin.mp4"></video>
+      </div>
+      <div class="origin-bar">
+        <button class="connect-button" id="originPlay" type="button" aria-label="Play or pause">▶</button>
+        <span id="originTime">0:00 / 0:00</span>
+      </div>
+      <div class="origin-links">
+        <a class="connect-button" href="https://x.com/LiViXi3"><i class="ri-twitter-x-line"
+            aria-hidden="true"></i>@LiViXi3</a>
+        <a class="connect-button" href="https://www.linkedin.com/in/antoine-mingo/"><i class="ri-linkedin-fill"
+            aria-hidden="true"></i>antoine-mingo</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- cookie notice + toast -->
+  <aside class="cookie" id="cookie" aria-label="Cookie notice">
+    <p>the others can't see your data. neither can we.</p>
+    <small>auntie. (this is the cookie notice.)</small>
+    <button class="fine-btn connect-button" id="cookieOk" type="button">fine</button>
+  </aside>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="main.js"></script>
+</body>
+
+</html>
